@@ -6,15 +6,19 @@
 - python 3.6
 - also has [Dockerfile](https://github.com/jimmy801/NCU_auto_sign/blob/master/dockerfile/Dockerfile)
 ## 使用方式
+下載專案
 ```bash= !
 $ git clone https://github.com/jimmy801/NCU_auto_sign.git
 ```
+移至專案路徑
 ```bash= !
 $ cd NCU_auto_sign
 ```
+安裝必須套件
 ```bash= !
 $ pip install -r requirment.txt
 ```
+執行程式
 ```bash= !
 $ python crawler.py [ARGS(-t, -wid, -a, -p)]
 ```
