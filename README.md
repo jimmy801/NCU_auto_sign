@@ -3,7 +3,7 @@
 中央大學工讀生自動簽到程式，可以使用參數設置簽到時間(時長)、簽到頁 ID、帳號和密碼
 ## Environment
 - ubuntu
-- python
+- python3
 - selenium
 - also has [Dockerfile](https://github.com/jimmy801/NCU_auto_sign/blob/master/dockerfile/Dockerfile)
 ## 使用方式
