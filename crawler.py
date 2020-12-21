@@ -16,6 +16,9 @@ parser.add_argument('-a', '--account', default='',
 parser.add_argument('-p', '--password', default='', 
 	type=str, dest='pwd', 
 	help='user password')
+parser.add_argument('-w', '--work', default='',
+	type=str, dest='work', 
+	help='work content')
 
 args = parser.parse_args()
 
@@ -37,7 +40,7 @@ url = 'https://cis.ncu.edu.tw/HumanSys/student/stdSignIn/create?ParttimeUsuallyI
 
 chrome.get(url)
 
-# Fill sign in infomation
+# fill sign in infomation
 chrome.find_element_by_id('inputAccount').send_keys(args.acc)
 chrome.find_element_by_id('inputPassword').send_keys(args.pwd)
 
@@ -47,10 +50,17 @@ chrome.find_element_by_css_selector('button.btn.btn-primary').click()
 assert chrome.current_url != 'https://portal.ncu.edu.tw/login',\
 		'Wrong account or password!'
 
-# Redirection from NCU portal to human system
+# redirection from NCU portal to human system
 chrome.find_element_by_css_selector('button.btn.btn-primary').click()
 
-# sign in and out
+# fill in work content
+chrome.find_element_by_id('AttendWork').send_keys(args.work)
+
+# sign in
 chrome.find_element_by_id('signin').click()
+
+# work time
 time.sleep(3600 * args.time + 60)
+
+# sign out
 chrome.find_element_by_id('signout').click()

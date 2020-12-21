@@ -21,7 +21,7 @@ $ pip install -r requirment.txt
 ```
 4. 執行程式
 ```bash= !
-$ python crawler.py [ARGS(-t, -wid, -a, -p)]
+$ python crawler.py [ARGS(-t, -wid, -a, -p, -w)]
 ```
 [ARGS] 介紹
 - `-t`, `--time`: 簽到時長(hr), 型態 `int`，預設為 `4`
@@ -30,15 +30,17 @@ $ python crawler.py [ARGS(-t, -wid, -a, -p)]
     ![](https://i.imgur.com/xID5JPk.png)
 - `-a`, `--account`: 使用者帳號，型態 `str`，預設為空，可以修改程式碼來設置預設值
 - `-pwd`, `--password`: 使用者密碼，型態 `str`，預設為空，可以修改程式碼來設置預設值
+- `-w`, `--work`: 工作內容，型態 `str`，預設為空，可以修改程式碼來設置預設值(最好使用英文來避免編碼問題)
 
 > 如果需要使用 `[ARG]` 使用範例如下
 > ```bash= !
-> $ python crawler.py -t 5 -wid "1234" -a "123456789" -p "45678123+"
+> $ python crawler.py -t 5 -wid "1234" -a "123456789" -p "45678123+" -w "close door"
 > ```
 > 則是設定
 > - 使用帳號為 `123456789`
 > - 密碼為 `45678123+`
 > - 簽到頁 ID 為 `1234`
+> - 工作內容為 `close door`
 > - 程式執行後簽到，並在 `5` 小時候簽退
 
 > 如果不是用 `Dockerfile` 安裝，則需要
